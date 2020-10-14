@@ -1,6 +1,7 @@
 import javax.swing.JFrame; 
 import javax.swing.JComponent; 
 import java.awt.Graphics; 
+import java.awt.Color;
 
 public class Example extends JComponent {
   What a;
@@ -18,6 +19,12 @@ public class Example extends JComponent {
     What what = this.a;
     while (what != null) {
       what.draw(g); 
+      if (what.next != null) { 
+        g.setColor(Color.RED); 
+        g.drawLine(what.x + What.radius, what.y + What.radius, 
+                   what.next.x + What.radius, what.next.y + What.radius);
+        g.setColor(Color.BLACK); 
+      }
       what = what.next; 
     }
   }
