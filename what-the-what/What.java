@@ -1,14 +1,5 @@
-/* 
-  Welcome to DrJava.  Working directory is C:\Users\dgerman\Desktop\no-zoom
-  > java What
-  3(94, 0)
-  -1(366, 0)
-  2(278, 0)
-  > java What 
-  3(432, 0) 
-  -1(162, 0) 
-  2(304, 0)  
- */
+import java.awt.Graphics; 
+
 public class What {
   int x, y; 
   int value; 
@@ -17,10 +8,14 @@ public class What {
     this.value = value; 
     this.next = next;
     this.x = (int)(Math.random() * 500 + 50); 
-    this.x = (int)(Math.random() * 500 + 50); 
+    this.y = (int)(Math.random() * 500 + 50); 
   }
-  public String toString() {
-    return this.value + "(" + this.x + ", " + this.y + ")"; 
+  public What(int value) {
+    this(value, null); 
+  }
+  public void draw(Graphics g) {
+    g.drawOval(this.x, this.y, 60, 60); 
+    g.drawString("" + this.value, this.x, this.y); 
   }
   public static void main(String[] args) {
     What a, b, c; 
