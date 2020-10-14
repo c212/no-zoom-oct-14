@@ -19,6 +19,10 @@ public class What {
     return Math.abs(this.x - x) <= What.radius * 2 &&
            Math.abs(this.y - y) <= What.radius * 2;
   }
+  public void moveTo(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
   public void draw(Graphics g) {
     g.setColor(Color.WHITE); 
     g.fillOval(this.x, this.y, 2 * What.radius, 2 * What.radius); 

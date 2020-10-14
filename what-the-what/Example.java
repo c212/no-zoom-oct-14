@@ -11,6 +11,8 @@ public class Example extends JComponent
   public void mouseMoved(MouseEvent e) { } 
   public void mouseDragged(MouseEvent e) { 
     System.out.println( this.current ); 
+    this.current.moveTo(e.getX(), e.getY()); 
+    this.repaint(); 
   } 
   public void mouseEntered(MouseEvent e) { } 
   public void mouseExited(MouseEvent e) { } 
@@ -21,7 +23,9 @@ public class Example extends JComponent
       this.current = this.current.next; 
     }
   } 
-  public void mouseReleased(MouseEvent e) { } 
+  public void mouseReleased(MouseEvent e) { 
+    this.current = null; 
+  } 
   public void mouseClicked(MouseEvent e) { } 
   What a, current;
   public Example() {
