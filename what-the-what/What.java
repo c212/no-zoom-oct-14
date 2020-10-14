@@ -15,7 +15,7 @@ public class What {
   }
   public void draw(Graphics g) {
     g.drawOval(this.x, this.y, 60, 60); 
-    g.drawString("" + this.value, this.x, this.y); 
+    g.drawString("" + this.value, this.x + 30, this.y + 30); 
   }
   public static void main(String[] args) {
     What a, b, c; 

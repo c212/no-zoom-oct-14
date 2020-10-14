@@ -3,7 +3,10 @@ import javax.swing.JComponent;
 import java.awt.Graphics; 
 
 public class Example extends JComponent {
-  What a = new What(9), b = new What(2), c = new What(-3); 
+  What a;
+  public Example() {
+    a = new What(9, new What(2, new What(-3)));     
+  }
   public static void main(String[] args) {
     JFrame a = new JFrame("no zoom today; what the what?");
     Example b = new Example(); 
@@ -12,8 +15,10 @@ public class Example extends JComponent {
     a.setSize(600, 600); 
   }
   public void paintComponent(Graphics g) {
-    this.a.draw(g);  
-    this.b.draw(g);  
-    this.c.draw(g);  
+    What what = this.a;
+    while (what != null) {
+      what.draw(g); 
+      what = what.next; 
+    }
   }
 }
