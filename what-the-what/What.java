@@ -15,6 +15,10 @@ public class What {
   public What(int value) {
     this(value, null); 
   }
+  public boolean contains(int x, int y) {
+    return Math.abs(this.x - x) <= What.radius * 2 &&
+           Math.abs(this.y - y) <= What.radius * 2;
+  }
   public void draw(Graphics g) {
     g.setColor(Color.WHITE); 
     g.fillOval(this.x, this.y, 2 * What.radius, 2 * What.radius); 
