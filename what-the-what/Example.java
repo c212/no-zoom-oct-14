@@ -5,7 +5,7 @@ import java.awt.Graphics;
 public class Example extends JComponent {
   What a;
   public Example() {
-    a = new What(9, new What(2, new What(-3)));     
+    a = new What(9, new What(2, new What(-3, new What(4))));     
   }
   public static void main(String[] args) {
     JFrame a = new JFrame("no zoom today; what the what?");

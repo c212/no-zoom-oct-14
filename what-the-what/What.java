@@ -1,6 +1,8 @@
 import java.awt.Graphics; 
+import java.awt.Color; 
 
 public class What {
+  static int radius = 20; 
   int x, y; 
   int value; 
   What next; 
@@ -14,8 +16,11 @@ public class What {
     this(value, null); 
   }
   public void draw(Graphics g) {
-    g.drawOval(this.x, this.y, 60, 60); 
-    g.drawString("" + this.value, this.x + 30, this.y + 30); 
+    g.setColor(Color.WHITE); 
+    g.fillOval(this.x, this.y, 2 * What.radius, 2 * What.radius); 
+    g.setColor(Color.BLACK); 
+    g.drawOval(this.x, this.y, 2 * What.radius, 2 * What.radius); 
+    g.drawString("" + this.value, this.x + What.radius, this.y + What.radius); 
   }
   public static void main(String[] args) {
     What a, b, c; 
